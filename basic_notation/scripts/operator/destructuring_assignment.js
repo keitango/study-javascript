@@ -13,6 +13,6 @@ var [y_1, y_2, ...other] = data2;
 console.log(y_1);
 console.log(y_2);
 console.log(other);
-for(let i = 0, len = other.length; i < len; i ++){
+for(var i = 0, len = other.length; i < len; i ++){
   console.log(i + ":" + other[i]);
 }
