@@ -10,12 +10,12 @@ console.log(title);
 console.log(rating_avg);
 
 // プロパティと異なる変数名に割り当て分割する
-let {title : name, production : studio} = vrains;  // 変数の並びはプロパティと異なってもいい，分解しないプロパティがあってもいい
+var {title : name, production : studio} = vrains;  // 変数の並びはプロパティと異なってもいい，分解しないプロパティがあってもいい
 console.log(name);
 console.log(studio);
 
 // 入れ子オブジェクトの分解
-let arcv = {
+var arcv = {
   title : "遊戯★Arc-V",
   broadcaster : "💃レビ東京",
   production : "ぎゃ◇っぷ",
@@ -26,7 +26,7 @@ let arcv = {
       garbage : "ys < yurusu"
     }
   }
-let { character : {hero, heroine}, character : {garbage} } = arcv;
+var { character : {hero, heroine}, character : {garbage} } = arcv;
 console.log(hero);
 console.log(heroine);
 console.log(garbage);
