@@ -1,0 +1,10 @@
+let num = 114514;
+console.log("let num = 114514 : " + typeof num);
+let str = "止まるんじゃねぇぞ・・・";
+console.log("let str = '止まるんじゃねぇぞ・・・' : " + typeof str);
+let flag = true;
+console.log("let flag = true : " + typeof flag);
+let hokuriku = ['Fukui', 'Ishikawa', 'Toyama'];
+console.log("let hokuriku = ['Fukui', 'Ishikawa', 'Toyama'] : " + typeof ary);
+let fukui = {population : 800000, speciality : "Echizen Washi", celeblity : "Owada Shinya"};
+console.log('let fukui = {population : 800000, speciality : "Echizen Washi", celeblity : "Owada Shinya"}; : ' + typeof ary);
