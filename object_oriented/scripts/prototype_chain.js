@@ -1,21 +1,37 @@
-var Area = function(){};  // コンストラクタ
+// Personクラスを定義
+var Person = function(name, age){
+  this.name = name;
+  this.age = age;
+};
 
-Area.version = 2.0;  // 静的プロパティを定義
+// プロトタイプにメソッドを定義
+Person.prototype.getName = function(){
+  return this.name;
+};
+Person.prototype.getAge = function(){
+  return this.age;
+};
+Person.prototype.introduce = function(){
+    console.log("私は" + this.getName() + ", " + this.getAge() + "歳です.");
+};
 
-// 静的メソッドを定義
-Area.triangle = function(base, height){
-  return base * height / 2;
-}
+// Playerクラスを定義
+var Player = function(name, age, sport){
+  Person.call(this, name, age);
+  this.sport = sport;
+};
+Player.prototype = new Person();  // サブクラスのプロトタイプに，スーパークラスのインスタンスをセット
 
-console.log("version or Area Class : " + Area.version);
-var h = 10;
-var b = 5;
-console.log("area of triangle (b:%d, h:%d) : " + Area.triangle(b,h), b, h);
+// プロトタイプにメソッドを定義
+Player.prototype.getSport = function(){
+    return this.sport;
+};
+Player.prototype.introduce = function(){  // オーバーロード
+    console.log("私は" + this.getName() + ", " + this.getAge() + "歳で" + this.getSport() + "の選手です.");
+};
 
-var a = new Area();  // インスタンス化
-console.log("version or Area Class : " + a.version);  // undefined
-try{
-  console.log("version or Area Class : " + a.triangle(b,h));
-}catch(e){
-  console.error(e.message);  // not function
-}
+// インスタンス生成
+var takashi = new Person("takashi", 22);
+var kojiro = new Player("kojiro", 45, "baseball");
+takashi.introduce();  // 私はtakashi, 22際です.
+kojiro.introduce();  // 私はkojiro, 45歳でbaseballの選手です.
