@@ -41,7 +41,7 @@ class Person{
 }
 
 class Player extends Person{
-  constructor(name, height,weight, sport){
+  constructor(name, height, weight, sport){
     super(name, height, weight);
     this.sport = sport;
   }
@@ -51,12 +51,14 @@ class Player extends Person{
   get sport(){
     return this._sport;
   }
-
   introduce(){
-    console.log('test');
+    console.log('私は' + this.name + 'です. 身長は' + this.height + '体重は' + this.weight + 'で, ' + this.sport + 'の選手です.');
   }
 }
 
 var keitango = new Person('keitango', 1.84, 67);
 console.log(keitango.name);  // keitango
 console.log(keitango.getBMI());  // 19.78...
+
+var kojiro = new Player('kojiro', 1.80, 75, 'baseball');
+kojiro.introduce();
