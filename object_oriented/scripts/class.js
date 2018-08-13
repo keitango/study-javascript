@@ -28,7 +28,9 @@ class Person{
   get weight(){
     return this._weight;
   }
-
+  introduce(){
+    console.log('私は' + this.name + 'です. 身長は' + this.height + '[m], 体重は' + this.weight + '[kg]です. BMIは' + this.getBMI() + "です.");
+  }
   getBMI(){
     try{
       if(this.height === undefined) throw new Error(this.name + "'s height is undefined !");
@@ -51,14 +53,16 @@ class Player extends Person{
   get sport(){
     return this._sport;
   }
+  // overload
   introduce(){
-    console.log('私は' + this.name + 'です. 身長は' + this.height + '体重は' + this.weight + 'で, ' + this.sport + 'の選手です.');
+    console.log('私は' + this.name + 'です. 身長は' + this.height + '[m], 体重は' + this.weight + '[kg]です. ' + this.sport + 'の選手です. BMIは' + super.getBMI() + 'です.');
   }
 }
 
 var keitango = new Person('keitango', 1.84, 67);
 console.log(keitango.name);  // keitango
 console.log(keitango.getBMI());  // 19.78...
+keitango.introduce();
 
 var kojiro = new Player('kojiro', 1.80, 75, 'baseball');
 kojiro.introduce();
