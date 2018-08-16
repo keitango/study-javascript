@@ -14,3 +14,14 @@ let name = 'kojiro';
 let birth = new Date(1973,9,22);
 let member2 = {name, birth};
 console.log(member2);
+
+// プロパティを動的に生成する
+let i = 1;
+let member3 = {
+  name : 'matsuwaka',
+  birth : new Date(1980,8,13),
+  ['position' + i++] : 'starter',
+  ['position' + i++] : 'reliever',
+  ['position' + i++] : 'outfielder'
+};
+console.log(member3);
